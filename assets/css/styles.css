@@ -14,7 +14,32 @@ body {
     margin: 0;
     padding: 0;
 }
+/* Custom Scrollbar for a Dark Theme */
+body {
+    background-color: #121212;
+    /* Main background color */
+    color: #f9f9f9;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+}
 
+/* Custom Scrollbar Styling */
+body::-webkit-scrollbar {
+    width: 8px;
+    /* Scrollbar width */
+}
+
+body::-webkit-scrollbar-track {
+    background: #121212;
+    /* Track color - black */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #6200ea;
+    /* Thumb color - purple */
+    border-radius: 10px;
+}
 /* General Header Styles */
 .main-header {
     display: flex;
@@ -22,7 +47,10 @@ body {
     align-items: center;
     padding: 20px;
     background-color: #1e1e1e;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Ensures the navbar stays above other elements */
 }
 
 .logo {
@@ -315,4 +343,36 @@ body {
     background-color: #1e1e1e;
     color: #ffffff;
     margin-top: 40px;
+}
+
+/* Go to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #6200ea;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    /* Makes the button round */
+    cursor: pointer;
+    display: none;
+    /* Hidden by default */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+    background-color: #3700b3;
+    transform: translateY(-3px);
+    /* Lifts the button slightly on hover */
+}
+
+.top-icon {
+    width: 20px;
+    /* Adjust the size of the icon */
+    height: 20px;
+    filter: invert(1);
+    /* Makes the icon white if the original is black */
 }
