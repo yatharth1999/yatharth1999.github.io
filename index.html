@@ -11,13 +11,18 @@
 <body>
     <header class="main-header">
         <div class="logo">Yatharth Vohra</div>
-        <nav>
+        <nav class="nav-menu">
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#portfolio">Projects</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -116,7 +121,7 @@
         </div>
         <div class="contact-item">
             <img src="github-icon.png" alt="GitHub Icon" class="contact-icon">
-            <a href="https://github.com">GitHub Profile</a>
+            <a href="https://github.com/yatharth1999">GitHub Profile</a>
         </div>
     </div>
 </section>
@@ -128,3 +133,11 @@
 </body>
 
 </html>
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
